@@ -1,0 +1,262 @@
+@import "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Tangerine:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #292929;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
+
+body {
+  @apply bg-[#292929] h-[3000px] text-white font-inter
+}
+
+.container{
+  @apply mx-auto px-4 md:px-16 lg:px-36
+} 
+button{
+  @apply bg-[#333333] px-6 py-1 rounded-lg border-white border-[.5px] hover:bg-[#686868] transition-colors
+}
+header {
+  @apply h-14 flex justify-center items-center fixed w-full top-0 left-0 z-30 bg-[#292929ac]
+}
+header a{
+  @apply cursor-pointer mx-4 hover:text-[#FED109] transition-opacity text-sm md:mx-7 md:text-base
+}
+header a.active{
+  @apply text-[#FED109]
+}
+main{
+  @apply pt-14 overflow-x-hidden
+}
+
+
+section.banner .grid{
+  @apply h-[calc(100vh-56px)] items-center
+}
+
+section.banner .grid h1{
+  @apply uppercase text-5xl font-bold mt-6
+}
+section.banner .grid img{
+  @apply w-full z-10
+}
+
+section.banner .grid .float{
+  @apply absolute w-full h-full flex items-center justify-center
+}
+section.banner .grid .float img{
+   @apply w-48 h-48 absolute z-0
+}
+section.banner .grid .float img:nth-child(1){
+  @apply top-[2.5rem] right-[2rem]
+}
+section.banner .grid .float img:nth-child(2){
+  @apply bottom-[2rem] left-[2rem]
+}
+section.banner .grid .float img:nth-child(3){
+  @apply bottom-[3rem] right-[2rem]
+}
+section.banner .grid .float img:nth-child(5){
+  @apply top-[25%] left-[-2rem]
+}
+section.banner .grid .float img:nth-child(4){
+  @apply top-[-3rem] left-[25%]
+}
+.line{
+  @apply left-[20%] absolute rounded-full h-1.5 w-[60%] bg-[#585858]
+}
+.blured{
+  @apply absolute aspect-square w-[30%] rounded-full blur-[350px] 
+}
+.banner .blured{
+  @apply left-[30%] top-[-100%] bg-[#FFC81580]
+}
+.social .blured{
+  @apply left-[-50%] top-[20%] bg-[#FFC81580]
+}
+
+.projects{
+  @apply relative
+}
+.projects .arrow{
+  @apply w-full mt-[-1rem]
+}
+.projects .arrow .desktop{
+  @apply hidden
+}
+.projects .arrow .desktop{
+  @apply hidden lg:block
+}
+.projects .arrow .phone{
+  @apply lg:hidden
+}
+.projects .arrow svg{
+  @apply w-full
+}
+.projects .boxes{
+  @apply absolute top-0 left-0 w-full h-full
+}
+.projects .box{
+  background: radial-gradient(97.57% 210.75% at 0.9% 2.98%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(21px); 
+  @apply sm:w-[500px] p-4 rounded-3xl border-[.5px] border-white absolute top-0
+}
+.projects .box:nth-child(even){
+  transform: matrix(1, -0.04, 0.12, 0.99, 0, 0);
+  @apply sm:left-[3%] md:left-[7%]
+}
+.projects .box:nth-child(odd){
+  transform: matrix(1, 0.01, -0.11, 0.99, 0, 0);
+  @apply sm:right-[3%] md:right-[7%]
+}
+.projects .box:nth-child(1){
+  @apply top-[9%] lg:top-[7%]
+}
+.projects .box:nth-child(2){
+  @apply top-[31%] lg:top-[29%]
+}
+.projects .box:nth-child(3){
+  @apply top-[54%] lg:top-[52%]
+}
+.projects .box:nth-child(4){
+  @apply top-[76%] lg:top-[74%]
+}
+
+.projects .box .logo{
+  @apply h-32 lg:h-40
+}
+.projects .box .logo img{
+  @apply h-full 
+}
+.projects .box .prog{
+  @apply flex justify-center flex-col
+}
+.projects .box .prog h1{
+  @apply uppercase text-2xl lg:text-4xl font-bold tracking-wide
+}
+.projects .box .prog p,
+.projects .box .prog span{
+  @apply text-[#ffffffc9] font-light text-xs lg:text-base leading-5
+}
+
+
+
+.title{
+  @apply relative
+}
+.title h1{
+  @apply capitalize text-2xl 
+}
+
+
+
+.banner .desc{
+  @apply relative py-10
+}
+.banner .desc .text{
+  @apply mt-10 mb-5 lg:w-[70%]
+}
+.banner .desc p{
+  @apply mt-1 text-lg
+}
+
+.yellow-line{
+  @apply absolute h-1 bg-[#FFC815]
+}
+.yellow-line.bullet::after{
+  @apply content-[''] absolute right-[-12px] top-[-9px] rounded-full w-5 h-5 bg-[#FFC815]
+}
+
+section:not(.banner){
+  @apply py-16
+}
+
+.resume .content{
+  @apply relative
+}
+
+.resume .img-txt{
+  @apply rounded-2xl overflow-hidden relative bg-[#d9d9d9]
+}
+.resume .content .img-txt img{
+  @apply w-96 h-64 block object-cover
+}
+.resume .services .img-txt{
+  @apply w-80 h-52 block object-cover m-auto
+}
+.resume .content .img-txt .txt{
+  @apply absolute bottom-0 left-0 w-full p-4 text-xs bg-gradient-to-t from-[#0000007e] to-[#0000001a]
+}
+.firstslider{
+  @apply my-16
+}
+.firstslider .swiper-slide{
+  @apply w-auto
+}
+.resume .social {
+  @apply relative
+}
+.resume .social .slinks{
+  @apply flex items-center justify-center my-16
+
+}
+.resume .social .slinks .scl{
+  @apply mx-3 p-4 md:mx-5 md:p-5 bg-[#333333] rounded-full hover:bg-[#FED109] transition-colors
+}
+
+.resume .social .slinks .scl svg {
+  @apply w-12 h-12
+}
+
+.resume .cv .btns{
+  @apply flex items-center my-16 
+}
+.resume .cv .btns button:first-of-type{
+  @apply lg:ml-[55%] mr-8 md:ml-[40%] ml-[30%]
+}
+.resume .cv .btns button:last-of-type{
+  @apply hover:bg-[#FED109] hover:text-[#333333]
+}
+
+.contact .carea{
+  background: radial-gradient(97.57% 210.75% at 0.9% 2.98%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(21px);
+  @apply w-full py-10 px-6 rounded-3xl border-[#D8D8D8] border-[.5px] my-16
+}
+.contact .carea textarea,
+.contact .carea input{
+  @apply rounded-2xl py-4 px-6 w-full bg-[#C4C4C4] text-black outline-none border-white border-[2px] shadow-lg box-border
+}
+.contact .carea textarea{
+  @apply min-h-full max-h-full
+}
+.contact .carea button{
+  @apply py-3 px-6 w-full rounded-2xl hover:bg-[#686868]
+}
+.contact .carea button.sent{
+  @apply hover:bg-[#FED109]
+}
+
+.container:not(.bnr, .desc, .reach, .ftr){
+  @apply mt-20
+}
+
+footer{
+  @apply py-6 relative
+}
